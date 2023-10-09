@@ -22,7 +22,7 @@ if (fs.existsSync(constants.MODEL)) {
    ));
 }
 
-mlp.fit(trainingSamples, 5000);
+mlp.fit(trainingSamples);
 
 fs.writeFileSync(constants.MODEL,
    JSON.stringify(mlp)
