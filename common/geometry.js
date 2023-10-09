@@ -198,7 +198,8 @@ geometry.minimumBoundingBox = ({ points, hull }) => {
 function getOrientation(p1, p2, p3) {
    const val =
       (p2[1] - p1[1]) * (p3[0] - p2[0]) - (p2[0] - p1[0]) * (p3[1] - p2[1]);
-   if (val === 0) {
+   return val;
+      if (val === 0) {
       return 0;
    }
    return val > 0 ? 1 : -1;

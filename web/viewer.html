@@ -115,7 +115,7 @@
             transparency: 0.9,
             icon: "image",
             bg: new Image(),
-            //hideSamples: true
+            hideSamples: true
          };
          options.bg.src = constants.DECISION_BOUNDARY;
          graphics.generateImages(utils.styles);
@@ -148,7 +148,8 @@
 
          function onDrawingUpdate(paths) {
             const functions = featureFunctions.inUse.map((f) => f.function);
-            point = functions.map((f) => f(paths));
+            //point = functions.map((f) => f(paths));
+            point = functions[0](paths);
             utils.normalizePoints([point], minMax);
             // const { label, nearestSamples } = kNN.predict(point);
             const { label, nearestSamples } = mlp.predict(point);
